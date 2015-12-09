@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @barber.user %>
+</p>
+
+<p>
+  <strong>Image filename:</strong>
+  <%= @barber.image_filename %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @barber.bio %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @barber.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @barber.last_name %>
+</p>
+
+<%= link_to 'Edit', edit_barber_path(@barber) %> |
+<%= link_to 'Back', barbers_path %>
