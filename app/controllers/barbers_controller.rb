@@ -29,7 +29,7 @@ class BarbersController < ApplicationController
     @barber.generate_filename
     @barber.user = current_user
 
-    @uploaded_io = params[:image_filename][:uploaded_file]
+    @uploaded_io = params[:barber][:uploaded_file]
 
     File.open(Rails.root.join('public', 'images', @barber.image_filename), 'wb') do |file|
         file.write(@uploaded_io.read)
@@ -40,25 +40,6 @@ class BarbersController < ApplicationController
     else
       render :new
     end
-
-
-# delete section
-    @image = Image.new(image_params)
-        @image.generate_filename  # a function you write to generate a random filename and put it in the images "filename" variable
-        @image.user = current_user
-
-        @uploaded_io = params[:image][:uploaded_file]
-
-        File.open(Rails.root.join('public', 'images', @image.filename), 'wb') do |file|
-            file.write(@uploaded_io.read)
-        end
-
-        if @image.save
-          redirect_to @image, notice: 'Image was successfully created.'
-        else
-          render :new
-        end
-# end delete section
 
   end
 

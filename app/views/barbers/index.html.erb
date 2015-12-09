@@ -16,16 +16,29 @@
 
   <tbody>
     <% @barbers.each do |barber| %>
-      <tr>
-        <td><%= barber.user.email %></td>
-        <td><%= barber.image_filename %></td>
-        <td><%= barber.bio %></td>
-        <td><%= barber.first_name %></td>
-        <td><%= barber.last_name %></td>
-        <td><%= link_to 'Show', barber %></td>
-        <td><%= link_to 'Edit', edit_barber_path(barber) %></td>
-        <td><%= link_to 'Destroy', barber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+        <% if (user_signed_in? and barber.user == current_user) %>
+            <tr>
+                <td><%= barber.user.email %></td>
+                <td><%= image_tag root_url + "/images/" + barber.image_filename, size: "100x100", alt: barber.image_filename %></td>
+                <td><%= barber.bio %></td>
+                <td><%= barber.first_name %></td>
+                <td><%= barber.last_name %></td>
+
+                <td><%= link_to 'Show', barber %></td>
+                <td><%= link_to 'Edit', edit_barber_path(barber) %></td>
+                <td><%= link_to 'Destroy', barber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+        <% else %>
+            <tr>
+                <td><%= barber.user.email %></td>
+                <td><%= image_tag root_url + "/images/" + barber.image_filename, size: "100x100", alt: barber.image_filename %></td>
+                <td><%= barber.bio %></td>
+                <td><%= barber.first_name %></td>
+                <td><%= barber.last_name %></td>
+                <td><%= link_to 'Show', barber %></td>
+            </tr>
+        <% end %>
     <% end %>
   </tbody>
 </table>
