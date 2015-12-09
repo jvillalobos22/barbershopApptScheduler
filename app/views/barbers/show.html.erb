@@ -25,7 +25,18 @@
   <%= @barber.last_name %>
 </p>
 
+<!-- Appointments -->
 
+<!-- Link to Appointment Index if barber is the user -->
+<% if @owner %>
+    <h5><strong>You are the logged in barber</strong></h5>
+
+<% end %>
+<!-- Show appointment create for all users -->
+    
+
+<!-- End Appointments -->
+<!-- Reviews Index and New -->
 <h4>Reviews</h4>
 <h6>Create A New Review:</h6>
 <%= render 'reviews/form' %>
@@ -48,7 +59,7 @@
         </p>
     <% end %>
 <% end %>
-
+<!-- End Reviews -->
 
 <%= link_to 'Edit', edit_barber_path(@barber) %> |
 <%= link_to 'Back', barbers_path %>

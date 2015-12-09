@@ -14,7 +14,8 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments/new
   def new
-    @appointment = Appointment.new
+      @barber = Barber.find params[:barber_id]
+      @appointment = @barber.appointments.new
   end
 
   # GET /appointments/1/edit

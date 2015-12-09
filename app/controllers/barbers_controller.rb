@@ -13,6 +13,10 @@ class BarbersController < ApplicationController
       # create an empty Review so we can allow the user to
       # fill it in on the show view
       @review = @barber.reviews.new
+
+      if @barber.user == current_user
+          @owner = true
+      end
   end
 
   # GET /barbers/new

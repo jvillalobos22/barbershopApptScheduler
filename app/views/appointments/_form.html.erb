@@ -1,4 +1,4 @@
-<%= form_for(@appointment) do |f| %>
+<%= form_for([@barber, @appointment]) do |f| %>
   <% if @appointment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
@@ -15,10 +15,10 @@
     <%= f.label :appt_start %><br>
     <%= f.datetime_select :appt_start %>
   </div>
-  <div class="field">
+  <!--<div class="field">
     <%= f.label :barber_id %><br>
     <%= f.text_field :barber_id %>
-  </div>
+</div>-->
   <div class="field">
     <%= f.label :client_name %><br>
     <%= f.text_field :client_name %>
