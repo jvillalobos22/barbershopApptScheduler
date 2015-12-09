@@ -1,6 +1,6 @@
 class BarbersController < ApplicationController
   before_action :set_barber, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!, :except => [:index, :show]
   # GET /barbers
   # GET /barbers.json
   def index

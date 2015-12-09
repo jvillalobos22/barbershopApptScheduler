@@ -26,11 +26,11 @@
 </p>
 
 <!-- Appointments -->
-<%= link_to 'Appointments', barber_appointments_url(@barber) %>
+<%= link_to 'Create An Appointment', new_barber_appointment_path(@barber) %>
 <!-- Link to Appointment Index if barber is the user -->
 <% if @owner %>
     <h5><strong>You are the logged in barber</strong></h5>
-
+    <%= link_to 'Appointments', barber_appointments_url(@barber) %>
 <% end %>
 <!-- Show appointment create for all users -->
 

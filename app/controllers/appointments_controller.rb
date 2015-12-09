@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, :except => [:show, :new, :create]
 
   # GET /appointments
   # GET /appointments.json
@@ -32,7 +33,7 @@ class AppointmentsController < ApplicationController
       @appointment = @barber.appointments.new(appointment_params)
 
       if @appointment.save
-          redirect_to barber_appointments_url(@barber), notice: 'Appointment was successfully created.'
+          redirect_to appointment_path(@appointment), notice: 'Appointment was successfully created.'
       else
           render :new
       end

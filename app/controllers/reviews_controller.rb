@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!, :except => [:show, :new]
 
   # GET /reviews/1
   # GET /reviews/1.json
