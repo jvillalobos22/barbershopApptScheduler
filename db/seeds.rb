@@ -44,4 +44,91 @@ users = User.create(
   ]
 )
 
-# barbers = Barber.create(
+barbers = Barber.create(
+    [
+        {
+            user_id: 1,
+            image_filename: 'random.jpg',
+            bio: 'This is random text',
+            first_name: 'Juan',
+            last_name: 'Villalobos'
+        },
+        {
+            user_id: 2,
+            image_filename: 'random.jpg',
+            bio: 'This is random text',
+            first_name: 'Javier',
+            last_name: 'Villalobos'
+        },
+        {
+            user_id: 3,
+            image_filename: 'random.jpg',
+            bio: 'This is random text',
+            first_name: 'Vanessa',
+            last_name: 'Villalobos'
+        },
+        {
+            user_id: 4,
+            image_filename: 'random.jpg',
+            bio: 'This is random text',
+            first_name: 'Bob',
+            last_name: 'TheBarber'
+        },
+        {
+            user_id: 5,
+            image_filename: 'random.jpg',
+            bio: 'This is random text',
+            first_name: 'Ron',
+            last_name: 'O Keefe',
+        },
+        {
+            user_id: 6,
+            image_filename: 'random.jpg',
+            bio: 'This is random text',
+            first_name: 'Billy',
+            last_name: 'TheKid'
+        },
+        {
+            user_id: 7,
+            image_filename: 'random.jpg',
+            bio: 'This is random text',
+            first_name: 'Ron',
+            last_name: 'Gomez'
+        },
+        {
+            user_id: 8,
+            image_filename: 'random.jpg',
+            bio: 'This is random text',
+            first_name: 'Michael',
+            last_name: 'Jordan'
+        },
+        {
+            user_id: 9,
+            image_filename: 'random.jpg',
+            bio: 'This is random text',
+            first_name: 'Antonio',
+            last_name: 'Brown'
+        },
+        {
+            user_id: 10,
+            image_filename: 'random.jpg',
+            bio: 'This is random text',
+            first_name: 'John',
+            last_name: 'Gruden'
+        },
+        {
+            user_id: 11,
+            image_filename: 'random.jpg',
+            bio: 'This is random text',
+            first_name: 'Marshall',
+            last_name: 'Mathers'
+        },
+        {
+            user_id: 12,
+            image_filename: 'random.jpg',
+            bio: 'This is random text',
+            first_name: 'Joseph',
+            last_name: 'Lucas'
+        }
+    ]
+)

@@ -26,15 +26,40 @@ class BarbersController < ApplicationController
   def create
     @barber = Barber.new(barber_params)
 
-    respond_to do |format|
-      if @barber.save
-        format.html { redirect_to @barber, notice: 'Barber was successfully created.' }
-        format.json { render :show, status: :created, location: @barber }
-      else
-        format.html { render :new }
-        format.json { render json: @barber.errors, status: :unprocessable_entity }
-      end
+    @barber.generate_filename
+    @barber.user = current_user
+
+    @uploaded_io = params[:image_filename][:uploaded_file]
+
+    File.open(Rails.root.join('public', 'images', @barber.image_filename), 'wb') do |file|
+        file.write(@uploaded_io.read)
     end
+
+    if @barber.save
+      redirect_to @barber, notice: 'Barber was successfully created.'
+    else
+      render :new
+    end
+
+
+# delete section
+    @image = Image.new(image_params)
+        @image.generate_filename  # a function you write to generate a random filename and put it in the images "filename" variable
+        @image.user = current_user
+
+        @uploaded_io = params[:image][:uploaded_file]
+
+        File.open(Rails.root.join('public', 'images', @image.filename), 'wb') do |file|
+            file.write(@uploaded_io.read)
+        end
+
+        if @image.save
+          redirect_to @image, notice: 'Image was successfully created.'
+        else
+          render :new
+        end
+# end delete section
+
   end
 
   # PATCH/PUT /barbers/1
