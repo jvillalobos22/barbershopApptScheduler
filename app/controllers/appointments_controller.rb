@@ -5,6 +5,7 @@ class AppointmentsController < ApplicationController
   # GET /appointments.json
   def index
     @appointments = Appointment.all
+    @barber = Barber.find params[:barber_id]
   end
 
   # GET /appointments/1
@@ -16,6 +17,8 @@ class AppointmentsController < ApplicationController
   def new
       @barber = Barber.find params[:barber_id]
       @appointment = @barber.appointments.new
+      #@appointment.barber_id = @barber.barber_id
+      #@appointment = Appointment.new
   end
 
   # GET /appointments/1/edit
@@ -25,41 +28,33 @@ class AppointmentsController < ApplicationController
   # POST /appointments
   # POST /appointments.json
   def create
-    @appointment = Appointment.new(appointment_params)
+      @barber = Barber.find params[:barber_id]
+      @appointment = @barber.appointments.new(appointment_params)
 
-    respond_to do |format|
       if @appointment.save
-        format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
-        format.json { render :show, status: :created, location: @appointment }
+          redirect_to barber_appointments_url(@barber), notice: 'Appointment was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @appointment.errors, status: :unprocessable_entity }
+          render :new
       end
-    end
+
   end
 
   # PATCH/PUT /appointments/1
   # PATCH/PUT /appointments/1.json
   def update
-    respond_to do |format|
-      if @appointment.update(appointment_params)
-        format.html { redirect_to @appointment, notice: 'Appointment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @appointment }
-      else
-        format.html { render :edit }
-        format.json { render json: @appointment.errors, status: :unprocessable_entity }
-      end
-    end
+
+       if @appointment.update(appointment_params)
+           redirect_to barber_appointments_url(@appointment.barber), notice: 'Appointment was successfully updated.'
+       else
+           render :edit
+       end
   end
 
   # DELETE /appointments/1
   # DELETE /appointments/1.json
   def destroy
-    @appointment.destroy
-    respond_to do |format|
-      format.html { redirect_to appointments_url, notice: 'Appointment was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+      @appointment.destroy
+      redirect_to barber_appointments_url(@appointment.barber) , notice: 'Appointment was successfully destroyed.'
   end
 
   private
