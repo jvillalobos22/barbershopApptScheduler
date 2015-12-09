@@ -17,7 +17,7 @@
   <tbody>
     <% @barbers.each do |barber| %>
       <tr>
-        <td><%= barber.user %></td>
+        <td><%= barber.user.first_name %></td>
         <td><%= barber.image_filename %></td>
         <td><%= barber.bio %></td>
         <td><%= barber.first_name %></td>

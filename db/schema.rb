@@ -11,7 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208231039) do
+ActiveRecord::Schema.define(version: 20151209003213) do
+
+  create_table "appointments", force: :cascade do |t|
+    t.datetime "appt_start"
+    t.integer  "barber_id"
+    t.string   "client_name"
+    t.string   "client_phone"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "appointments", ["barber_id"], name: "index_appointments_on_barber_id"
+
+  create_table "barbers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "image_filename"
+    t.text     "bio"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "barbers", ["user_id"], name: "index_barbers_on_user_id"
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "barber_id"
+    t.string   "client_name"
+    t.string   "str"
+    t.integer  "rating"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "reviews", ["barber_id"], name: "index_reviews_on_barber_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

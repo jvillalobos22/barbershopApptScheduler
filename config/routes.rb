@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :reviews
-  resources :appointments
-  resources :barbers
+
+  resources :barbers do
+      resources :reviews, :shallow => true
+      resources :appointments, :shallow => true
+  end
+
   devise_for :users
 
   root 'barbers#index'
