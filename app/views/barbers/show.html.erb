@@ -25,5 +25,30 @@
   <%= @barber.last_name %>
 </p>
 
+
+<h4>Reviews</h4>
+<h6>Create A New Review:</h6>
+<%= render 'reviews/form' %>
+
+<% @barber.reviews.each do |review| %>
+    <% if !review.new_record? %>
+        <p>
+          <strong>Client name:</strong>
+          <%= review.client_name %>
+        </p>
+
+        <p>
+          <strong>Str:</strong>
+          <%= review.str %>
+        </p>
+
+        <p>
+          <strong>Rating:</strong>
+          <%= review.rating %>
+        </p>
+    <% end %>
+<% end %>
+
+
 <%= link_to 'Edit', edit_barber_path(@barber) %> |
 <%= link_to 'Back', barbers_path %>

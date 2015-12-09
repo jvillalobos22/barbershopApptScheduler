@@ -10,6 +10,9 @@ class BarbersController < ApplicationController
   # GET /barbers/1
   # GET /barbers/1.json
   def show
+      # create an empty Review so we can allow the user to
+      # fill it in on the show view
+      @review = @barber.reviews.new
   end
 
   # GET /barbers/new
