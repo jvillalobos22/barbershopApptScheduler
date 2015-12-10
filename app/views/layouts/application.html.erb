@@ -9,6 +9,7 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300|Lato:400,300,700' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -51,21 +52,6 @@
             <p class="alert"><%= alert %></p>
         </div>
     </div>
-
-
-
-
-
-
-    <!--<div id="user_nav">
-        <% if user_signed_in? %>
-        Signed in as <%= current_user.email %>. Not you?
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-        <% else %>
-        <%= link_to "Sign up", new_user_registration_path %> or
-        <%= link_to "Sign in", new_user_session_path %>
-        <% end %>
-    </div>-->
 
 <%= yield %>
 

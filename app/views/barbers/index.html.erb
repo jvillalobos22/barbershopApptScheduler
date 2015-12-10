@@ -1,48 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+    <div class="large-12 columns">
+        <h1>Chico's Barbershop</h1>
+        <h5>To set an appointment, pick a barber from below:</h5>
+        <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+            <% @barbers.each do |barber| %>
+                <% if (user_signed_in? and barber.user == current_user) %>
+                <li class="barberCards currentBarber">
 
-<h1>Listing Barbers</h1>
+                    <div>
+                    <h3><%= barber.first_name %> <%= barber.last_name %> (me)</h3>
+                    <!-- <%= barber.user.email %> -->
+                    <%= image_tag root_url + "/images/" + barber.image_filename, alt: barber.image_filename %>
+                    <p><%= barber.bio %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Image filename</th>
-      <th>Bio</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+                    <%= link_to 'My Page', barber, :class => 'button tiny my_page_btn' %>
+                    <%= link_to 'Edit', edit_barber_path(barber), :class => 'barber_only_link barber_edit_link' %>
+                    <%= link_to 'Destroy', barber, :class => 'barber_only_link barber_destroy_link', method: :delete, data: { confirm: 'Are you sure?' } %>
+                    </div>
+                </li>
+                <% else %>
+                <li class="barberCards">
+                    <div>
+                    <h3><%= barber.first_name %> <%= barber.last_name %></h3>
+                    <!-- <%= barber.user.email %> -->
+                    <%= image_tag root_url + "/images/" + barber.image_filename, size: "100x100", alt: barber.image_filename %>
+                    <p><%= barber.bio %></p>
+                    <%= link_to 'Show', barber, :class => 'button tiny show_btn' %>
+                    </div>
+                </li>
+                <% end %>
+            <% end %>
+        </ul>
+    </div>
+</div>
 
-  <tbody>
-    <% @barbers.each do |barber| %>
-
-        <% if (user_signed_in? and barber.user == current_user) %>
-            <tr>
-                <td><%= barber.user.email %></td>
-                <td><%= image_tag root_url + "/images/" + barber.image_filename, size: "100x100", alt: barber.image_filename %></td>
-                <td><%= barber.bio %></td>
-                <td><%= barber.first_name %></td>
-                <td><%= barber.last_name %></td>
-
-                <td><%= link_to 'Show', barber %></td>
-                <td><%= link_to 'Edit', edit_barber_path(barber) %></td>
-                <td><%= link_to 'Destroy', barber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-        <% else %>
-            <tr>
-                <td><%= barber.user.email %></td>
-                <td><%= image_tag root_url + "/images/" + barber.image_filename, size: "100x100", alt: barber.image_filename %></td>
-                <td><%= barber.bio %></td>
-                <td><%= barber.first_name %></td>
-                <td><%= barber.last_name %></td>
-                <td><%= link_to 'Show', barber %></td>
-            </tr>
-        <% end %>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+<!-- Need to only show if current_user does not have a barber -->
 <%= link_to 'New Barber', new_barber_path %>

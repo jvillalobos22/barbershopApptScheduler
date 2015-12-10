@@ -1,65 +1,58 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User:</strong>
-  <%= @barber.user.id %>
-</p>
-
-<p>
-  <%= image_tag root_url + "/images/" + @barber.image_filename, size: "100x100", alt: @barber.image_filename %>
-</p>
-</p>
-
-<p>
-  <strong>Bio:</strong>
-  <%= @barber.bio %>
-</p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @barber.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @barber.last_name %>
-</p>
-
-<!-- Appointments -->
-<%= link_to 'Create An Appointment', new_barber_appointment_path(@barber) %>
-<!-- Link to Appointment Index if barber is the user -->
-<% if @owner %>
-    <h5><strong>You are the logged in barber</strong></h5>
-    <%= link_to 'Appointments', barber_appointments_url(@barber) %>
-<% end %>
-<!-- Show appointment create for all users -->
-
-
-<!-- End Appointments -->
-<!-- Reviews Index and New -->
-<h4>Reviews</h4>
-<h6>Create A New Review:</h6>
-<%= render 'reviews/form' %>
-
-<% @barber.reviews.each do |review| %>
-    <% if !review.new_record? %>
+<div class="row">
+    <div class="large-12 columns">
         <p>
-          <strong>Client name:</strong>
-          <%= review.client_name %>
+          <strong>User:</strong>
+          <%= @barber.user.id %>
+        </p>
+
+        <h2><%= @barber.first_name %> <%= @barber.last_name %></h2>
+        <p>
+          <%= image_tag root_url + "/images/" + @barber.image_filename, size: "100x100", alt: @barber.image_filename %>
+        </p>
         </p>
 
         <p>
-          <strong>Str:</strong>
-          <%= review.str %>
+          <strong>Bio:</strong>
+          <%= @barber.bio %>
         </p>
 
-        <p>
-          <strong>Rating:</strong>
-          <%= review.rating %>
-        </p>
-    <% end %>
-<% end %>
-<!-- End Reviews -->
+        <!-- Appointments -->
+        <%= link_to 'Create An Appointment', new_barber_appointment_path(@barber), :class => 'button tiny' %>
+        <!-- Link to Appointment Index if barber is the user -->
+        <% if @owner %>
+            <h5><strong>You are the logged in barber</strong></h5>
+            <%= link_to 'Appointments', barber_appointments_url(@barber) %>
+        <% end %>
+        <!-- Show appointment create for all users -->
 
-<%= link_to 'Edit', edit_barber_path(@barber) %> |
-<%= link_to 'Back', barbers_path %>
+
+        <!-- End Appointments -->
+        <!-- Reviews Index and New -->
+        <h4>Reviews</h4>
+        <h6>Create A New Review:</h6>
+        <%= render 'reviews/form' %>
+
+        <% @barber.reviews.each do |review| %>
+            <% if !review.new_record? %>
+                <p>
+                  <strong>Client name:</strong>
+                  <%= review.client_name %>
+                </p>
+
+                <p>
+                  <strong>Str:</strong>
+                  <%= review.str %>
+                </p>
+
+                <p>
+                  <strong>Rating:</strong>
+                  <%= review.rating %>
+                </p>
+            <% end %>
+        <% end %>
+        <!-- End Reviews -->
+
+        <%= link_to 'Edit', edit_barber_path(@barber) %> |
+        <%= link_to 'Back', barbers_path %>
+    </div>
+</div>
