@@ -20,6 +20,8 @@ class AppointmentsController < ApplicationController
       @appointment = @barber.appointments.new
       #@appointment.barber_id = @barber.barber_id
       #@appointment = Appointment.new
+      #datetime.New
+      #@available_times = []
   end
 
   # GET /appointments/1/edit
