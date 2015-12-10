@@ -27,11 +27,26 @@ p.notice, p.alert {
 }
 
 p.notice {
-    top: 60px;
+    top: 50px;
 }
 
 p.alert {
-    top: 80px;
+    top: 50px;
+}
+
+#error_explanation {
+    h2 {
+        font-size: 14px;
+        color: #cc0000;
+        font-weight: lighter;
+        font-family: 'Lato', sans-serif;
+    }
+
+    li {
+        list-style: none;
+        font-weight: bold;
+        color: darken(#cc0000, 10%);
+    }
 }
 
 p {
@@ -201,6 +216,9 @@ a.red_btn:hover, a.red_btn:focus {
 .barber_show {
     padding: 3em 0;
 
+    img {
+        display: block;
+    }
     h5 {
         margin-top: 5em;
     }
@@ -217,6 +235,7 @@ a.red_btn:hover, a.red_btn:focus {
     margin: 2em 0;
     border-left: 4px solid #cc0000;
     padding-left: 1em;
+    position: relative;
 
     p {
         margin-bottom: 0;
@@ -227,6 +246,54 @@ a.red_btn:hover, a.red_btn:focus {
     i {
         color: #cc0000;
     }
+
+    .delete_review_btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+/*
+*
+* Appointment Cards
+*
+*/
+li.appointment_card {
+    list-style: none;
+    border-left: 4px solid #cc0000;
+    margin: 2em 0;
+    padding-left: 2em;
+
+    span.time {
+        display: block;
+        color: darken(#cc0000, 10%);
+        font-weight: bold;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    a {
+        display: block;
+    }
+}
+/*
+*
+* Confirmation Page & Cards
+*
+*/
+.confirmation_page {
+    h3, h2 {
+        text-align: center;
+    }
+}
+
+.confirmation_card {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
 }
 
 /*
@@ -244,7 +311,15 @@ a.red_btn:hover, a.red_btn:focus {
 }
 
 @media screen and (max-width: 767px) {
+    li.current_user {
+        padding: .5em 0;
+        padding-left: 1em;
+    }
     .form-container {
         width: 100%;
+    }
+    .hero {
+        background-position: center;
+        background-size: cover;
     }
 }

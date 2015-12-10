@@ -1,10 +1,9 @@
-<div class="row">
+<div class="row content">
     <div class="large-8 medium-12 small-12 large-centered columns">
+        <%= link_to '< Back to Barber', barber_path(@appointment.barber) %>
         <h1>Editing Appointment</h1>
 
         <%= render 'form' %>
 
-        <%= link_to 'Show', @appointment %> |
-        <%= link_to 'Back', barber_appointments_path(:barber_id) %>
     </div>
 </div>

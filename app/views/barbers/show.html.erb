@@ -64,6 +64,9 @@
                   <%= review.str %>
                 </p>
                 <h6>- <%= review.client_name %></h6>
+                <% if current_user == @barber.user %>
+                <%= link_to 'Delete Review', review, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'delete_review_btn' %>
+                <% end %>
             </div>
             <% end %>
         <% end %>

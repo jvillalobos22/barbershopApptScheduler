@@ -29,7 +29,7 @@ barbers = Barber.create(
         {
             user_id: 1,
             image_filename: 'darthvaderbarber.jpg',
-            bio: 'This is random text',
+            bio: 'Impressive. Most impressive. Obi-Wan has taught you well. You have controlled your fear. Now, release your anger. Only your hatred can destroy me.',
             first_name: 'Darth',
             last_name: 'Vader'
         },
@@ -42,10 +42,10 @@ barbers = Barber.create(
         },
         {
             user_id: 3,
-            image_filename: 'barber2.jpg',
+            image_filename: 'sonnymoorebarber.jpg',
             bio: 'This is random text',
-            first_name: 'Vanessa',
-            last_name: 'Villalobos'
+            first_name: 'Sonny',
+            last_name: 'Moore'
         },
         {
             user_id: 4,
@@ -56,7 +56,7 @@ barbers = Barber.create(
         },
         {
             user_id: 5,
-            image_filename: 'barber4.jpg',
+            image_filename: 'ronswansonbarber.jpg',
             bio: 'This is random text',
             first_name: 'Ron',
             last_name: 'Swanson',
@@ -82,7 +82,7 @@ reviews = Review.create(
         {
             barber_id: 1,
             client_name: 'Dalton',
-            str: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            str: 'ROAD HOUSE! Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             rating: 5
         },
         {
@@ -114,7 +114,292 @@ reviews = Review.create(
             client_name: 'Ewok',
             str: 'This guy tried to blow up my planet!',
             rating: 1
+        },
+        {
+            barber_id: 2,
+            client_name: 'Mike',
+            str: 'Best haircut I have ever gotten. Fast, efficient, and friendly. I will be coming back soon.',
+            rating: 5
+        },{
+            barber_id: 2,
+            client_name: 'Kevin',
+            str: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            rating: 4
+        },
+        {
+            barber_id: 2,
+            client_name: 'Dalton',
+            str: 'ROAD HOUSE! Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            rating: 5
+        },
+        {
+            barber_id: 2,
+            client_name: 'Joe',
+            str: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+            rating: 3
+        },
+        {
+            barber_id: 3,
+            client_name: 'Mike',
+            str: 'Best haircut I have ever gotten. Fast, efficient, and friendly. I will be coming back soon.',
+            rating: 5
+        },{
+            barber_id: 3,
+            client_name: 'Kevin',
+            str: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            rating: 4
+        },
+        {
+            barber_id: 3,
+            client_name: 'Dalton',
+            str: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            rating: 5
+        },
+        {
+            barber_id: 3,
+            client_name: 'Joe',
+            str: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+            rating: 3
+        },
+        {
+            barber_id: 4,
+            client_name: 'Mike',
+            str: 'Best haircut I have ever gotten. Fast, efficient, and friendly. I will be coming back soon.',
+            rating: 5
+        },{
+            barber_id: 4,
+            client_name: 'Kevin',
+            str: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            rating: 4
+        },
+        {
+            barber_id: 4,
+            client_name: 'Dalton',
+            str: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            rating: 5
+        },
+        {
+            barber_id: 4,
+            client_name: 'Joe',
+            str: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+            rating: 3
+        },
+        {
+            barber_id: 5,
+            client_name: 'Mike',
+            str: 'Best haircut I have ever gotten. Fast, efficient, and friendly. I will be coming back soon.',
+            rating: 5
+        },{
+            barber_id: 5,
+            client_name: 'Kevin',
+            str: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            rating: 4
+        },
+        {
+            barber_id: 5,
+            client_name: 'Dalton',
+            str: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            rating: 5
+        },
+        {
+            barber_id: 5,
+            client_name: 'Joe',
+            str: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+            rating: 3
+        },
+        {
+            barber_id: 6,
+            client_name: 'Mike',
+            str: 'Best haircut I have ever gotten. Fast, efficient, and friendly. I will be coming back soon.',
+            rating: 5
+        },{
+            barber_id: 6,
+            client_name: 'Kevin',
+            str: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            rating: 4
+        },
+        {
+            barber_id: 6,
+            client_name: 'Dalton',
+            str: 'ROAD HOUSE! Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            rating: 5
+        },
+        {
+            barber_id: 6,
+            client_name: 'Joe',
+            str: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+            rating: 3
         }
-
     ]
 )
+
+appointments = Appointment.create([
+    {
+        appt_start: DateTime.strptime("12/15/2015 11:00", "%m/%d/%Y %H:%M"),
+        barber_id: 1,
+        client_name: 'Bill Doughtry',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/15/2015 13:00", "%m/%d/%Y %H:%M"),
+        barber_id: 1,
+        client_name: 'Ronnie',
+        client_phone: '5307930917'
+    },
+    {
+        appt_start: DateTime.strptime("12/16/2015 11:00", "%m/%d/%Y %H:%M"),
+        barber_id: 1,
+        client_name: 'Hank Hill',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/16/2015 13:00", "%m/%d/%Y %H:%M"),
+        barber_id: 1,
+        client_name: 'Tyson Henry',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/17/2015 11:00", "%m/%d/%Y %H:%M"),
+        barber_id: 1,
+        client_name: 'The Weeknd',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/17/2015 13:00", "%m/%d/%Y %H:%M"),
+        barber_id: 1,
+        client_name: 'Michael Jordan',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/18/2015 11:00", "%m/%d/%Y %H:%M"),
+        barber_id: 1,
+        client_name: 'Jordan Belfort',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/18/2015 13:00", "%m/%d/%Y %H:%M"),
+        barber_id: 1,
+        client_name: 'Mike',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/15/2015 11:00", "%m/%d/%Y %H:%M"),
+        barber_id: 2,
+        client_name: 'Bill Doughtry',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/15/2015 13:00", "%m/%d/%Y %H:%M"),
+        barber_id: 2,
+        client_name: 'Ronnie',
+        client_phone: '5307930917'
+    },
+    {
+        appt_start: DateTime.strptime("12/16/2015 11:00", "%m/%d/%Y %H:%M"),
+        barber_id: 2,
+        client_name: 'Hank Hill',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/16/2015 13:00", "%m/%d/%Y %H:%M"),
+        barber_id: 2,
+        client_name: 'Tyson Henry',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/17/2015 11:00", "%m/%d/%Y %H:%M"),
+        barber_id: 2,
+        client_name: 'The Weeknd',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/17/2015 13:00", "%m/%d/%Y %H:%M"),
+        barber_id: 2,
+        client_name: 'Michael Jordan',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/18/2015 11:00", "%m/%d/%Y %H:%M"),
+        barber_id: 2,
+        client_name: 'Jordan Belfort',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/18/2015 13:00", "%m/%d/%Y %H:%M"),
+        barber_id: 2,
+        client_name: 'Mike',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/15/2015 11:00", "%m/%d/%Y %H:%M"),
+        barber_id: 3,
+        client_name: 'Bill Doughtry',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/15/2015 13:00", "%m/%d/%Y %H:%M"),
+        barber_id: 4,
+        client_name: 'Ronnie',
+        client_phone: '5307930917'
+    },
+    {
+        appt_start: DateTime.strptime("12/16/2015 11:00", "%m/%d/%Y %H:%M"),
+        barber_id: 3,
+        client_name: 'Hank Hill',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/16/2015 13:00", "%m/%d/%Y %H:%M"),
+        barber_id: 4,
+        client_name: 'Tyson Henry',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/17/2015 11:00", "%m/%d/%Y %H:%M"),
+        barber_id: 3,
+        client_name: 'The Weeknd',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/17/2015 13:00", "%m/%d/%Y %H:%M"),
+        barber_id: 4,
+        client_name: 'Michael Jordan',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/15/2015 11:00", "%m/%d/%Y %H:%M"),
+        barber_id: 5,
+        client_name: 'Bill Doughtry',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/15/2015 13:00", "%m/%d/%Y %H:%M"),
+        barber_id: 6,
+        client_name: 'Ronnie',
+        client_phone: '5307930917'
+    },
+    {
+        appt_start: DateTime.strptime("12/16/2015 11:00", "%m/%d/%Y %H:%M"),
+        barber_id: 5,
+        client_name: 'Hank Hill',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/16/2015 13:00", "%m/%d/%Y %H:%M"),
+        barber_id: 6,
+        client_name: 'Tyson Henry',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/17/2015 11:00", "%m/%d/%Y %H:%M"),
+        barber_id: 5,
+        client_name: 'The Weeknd',
+        client_phone: '5307218936'
+    },
+    {
+        appt_start: DateTime.strptime("12/17/2015 13:00", "%m/%d/%Y %H:%M"),
+        barber_id: 6,
+        client_name: 'Michael Jordan',
+        client_phone: '5307218936'
+    }
+])
