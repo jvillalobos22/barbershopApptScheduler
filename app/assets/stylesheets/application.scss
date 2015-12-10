@@ -27,7 +27,26 @@ a {
 }
 
 a:hover, a:focus {
-    color: darken(#c00000, 10%)
+    color: darken(#c00000, 10%);
+}
+
+input[type="submit"] {
+    border: none;
+    background-color: #c00000;
+    color: #fff;
+    padding: 1em 2em;
+}
+
+input[type="submit"]:hover {
+    background-color: darken(#c00000, 10%);
+}
+
+a.red_btn {
+    background-color: #c00000;
+}
+
+a.red_btn:hover, a.red_btn:focus {
+    background-color: darken(#c00000, 10%);
 }
 
 .barberCards {
