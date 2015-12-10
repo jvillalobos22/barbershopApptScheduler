@@ -13,7 +13,12 @@
         <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
             <% if user_signed_in? %>
                 <% if current_user.barber.nil? %>
-                    <%= link_to 'New Barber', new_barber_path %>
+                <div class="new_barber_link">
+                    <p>
+                        You are an unregistered barber, please create your barber profile.
+                    </p>
+                    <%= link_to 'Create Barber Profile', new_barber_path, :class => 'button' %>
+                </div>
                 <% end %>
             <% end %>
             <% @barbers.each do |barber| %>

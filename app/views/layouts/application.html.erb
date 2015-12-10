@@ -48,7 +48,7 @@
 
             <!-- Left Nav Section -->
             <ul class="left">
-                <% if user_signed_in? %>
+                <% if user_signed_in? and !current_user.barber.nil? %>
                 <li><%= link_to 'My Appointments', barber_appointments_path(current_user.barber), :class => "red" %></li>
                 <% end %>
             </ul>
