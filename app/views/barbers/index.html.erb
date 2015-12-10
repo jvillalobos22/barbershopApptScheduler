@@ -1,7 +1,15 @@
-<div class="row">
-    <div class="large-12 columns">
-        <h1>Chico's Barbershop</h1>
-        <h5>To set an appointment, pick a barber from below:</h5>
+<div class="hero">
+    <div class="bg_layer">
+        <div class="row">
+            <div class="large-12 columns">
+                <h1>Chico's Barbershop</h1>
+                <h5>To set an appointment, pick a barber from below:</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row content">
+    <div class="large-12 columns barbers_index">
         <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
             <% @barbers.each do |barber| %>
                 <% if (user_signed_in? and barber.user == current_user) %>
