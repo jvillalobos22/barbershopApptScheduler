@@ -36,14 +36,14 @@ barbers = Barber.create(
         {
             user_id: 2,
             image_filename: 'barber1.jpg',
-            bio: 'This is random text',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             first_name: 'Javier',
             last_name: 'Rodriguez'
         },
         {
             user_id: 3,
             image_filename: 'sonnymoorebarber.jpg',
-            bio: 'This is random text',
+            bio: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             first_name: 'Sonny',
             last_name: 'Moore'
         },
@@ -57,14 +57,14 @@ barbers = Barber.create(
         {
             user_id: 5,
             image_filename: 'ronswansonbarber.jpg',
-            bio: 'This is random text',
+            bio: 'When people get too chummy with me, I like to call them by the wrong name to let them know, I don’t really care about them.',
             first_name: 'Ron',
             last_name: 'Swanson',
         },
         {
             user_id: 6,
             image_filename: 'odjbarber.jpg',
-            bio: 'This is random text',
+            bio: 'I like to catch footballs.',
             first_name: 'Odell',
             last_name: 'Beckham Jr'
         }
