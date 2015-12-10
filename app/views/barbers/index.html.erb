@@ -1,0 +1,55 @@
+<div class="hero">
+    <div class="bg_layer">
+        <div class="row">
+            <div class="large-12 columns">
+                <h1>Chico's Barbershop</h1>
+                <h5>To set an appointment, pick a barber from below:</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row content">
+    <div class="large-12 columns barbers_index">
+        <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+            <% if user_signed_in? %>
+                <% if current_user.barber.nil? %>
+                    <%= link_to 'New Barber', new_barber_path %>
+                <% end %>
+            <% end %>
+            <% @barbers.each do |barber| %>
+                <% if (user_signed_in? and barber.user == current_user) %>
+                <li class="barberCards currentBarber">
+
+                    <div>
+                    <h3><%= barber.first_name %> <%= barber.last_name %> (me)</h3>
+                    <!-- <%= barber.user.email %> -->
+                    <%= image_tag root_url + "/images/" + barber.image_filename, alt: barber.image_filename %>
+                    <p><%= barber.bio %></p>
+
+                    <%= link_to 'My Page', barber, :class => 'button tiny my_page_btn' %>
+                    <%= link_to 'Edit', edit_barber_path(barber), :class => 'barber_only_link barber_edit_link' %>
+                    <%= link_to 'Destroy', barber, :class => 'barber_only_link barber_destroy_link', method: :delete, data: { confirm: 'Are you sure?' } %>
+                    </div>
+                </li>
+                <% else %>
+                <li class="barberCards">
+                    <div>
+                    <h3><%= barber.first_name %> <%= barber.last_name %></h3>
+                    <!-- <%= barber.user.email %> -->
+                    <%= image_tag root_url + "/images/" + barber.image_filename, size: "100x100", alt: barber.image_filename %>
+                    <p><%= barber.bio %></p>
+                    <%= link_to 'Show', barber, :class => 'button tiny show_btn' %>
+                    </div>
+                </li>
+                <% end %>
+            <% end %>
+        </ul>
+    </div>
+</div>
+
+<!-- Need to only show if current_user does not have a barber -->
+<% if user_signed_in? %>
+    <% if current_user.barber.nil? %>
+        <%= link_to 'New Barber', new_barber_path %>
+    <% end %>
+<% end %>

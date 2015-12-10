@@ -1,0 +1,35 @@
+<div class="row">
+
+<%= form_for([@barber, @review]) do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation" class="large-12 columns">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+      <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="review_form">
+      <div class="name_field large-6 medium-6 small-12 columns">
+        <%= f.label 'Your Name' %>
+        <%= f.text_field :client_name, :required => true %>
+      </div>
+      <div class="rating_field large-6 medium-6 small-12 columns">
+        <%= f.label 'Rating on a sale of 1 to 5' %>
+        <%= f.number_field :rating, min: 1, max: 5, :required => true %>
+      </div>
+      <div class="review_field large-12 medium-12 small-12 columns">
+        <%= f.label 'Review' %>
+        <%= f.text_area :str, :required => true %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+  </div>
+<% end %>
+
+</div>

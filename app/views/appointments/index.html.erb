@@ -1,0 +1,23 @@
+<div class="row content">
+    <div class="large-12 columns">
+
+        <%= link_to '< Back To Barber', barber_path(@barber) %>
+        <h1>My Upcoming Appointments</h1>
+        <%= link_to 'New Appointment', new_barber_appointment_path, :class => 'button red_btn' %>
+
+        <ul>
+            <% @appointments.each do |appointment| %>
+                <li class="appointment_card">
+                    <h4><%= appointment.appt_start.strftime('%a %b %d, %Y') %><span class="time"><%= appointment.appt_start.strftime('%H:%M') %></span></h4>
+                    <p class="client_name"><%= appointment.client_name %></p>
+                    <p class="client_phone"><%= appointment.client_phone %></p>
+                    <% if current_user == appointment.barber.user %>
+                        <%= link_to 'Edit Appointment', edit_appointment_path(appointment) %></td>
+                        <%= link_to 'Delete Appointment', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <% end %>
+                </li>
+            <% end %>
+        </ul>
+
+    </div>
+</div>

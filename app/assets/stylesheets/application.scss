@@ -1,0 +1,325 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+ */
+
+$font-family-headings: "Roboto Slab", Helvetica, Roboto, sans-serif;
+
+body {
+    position: relative;
+}
+
+p.notice, p.alert {
+    position: absolute;
+    left: 10px;
+}
+
+p.notice {
+    top: 50px;
+}
+
+p.alert {
+    top: 50px;
+}
+
+#error_explanation {
+    h2 {
+        font-size: 14px;
+        color: #cc0000;
+        font-weight: lighter;
+        font-family: 'Lato', sans-serif;
+    }
+
+    li {
+        list-style: none;
+        font-weight: bold;
+        color: darken(#cc0000, 10%);
+    }
+}
+
+p {
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+label {
+    font-size: 18px;
+}
+.devise_login {
+    li {
+        color: #fff;
+    }
+
+    li.current_user {
+        padding-top: .6em;
+        padding-right: 1em;
+    }
+}
+
+
+label {
+    font-size: 16px;
+}
+.devise_login {
+    li {
+        color: #fff;
+    }
+
+    li.current_user {
+        padding-top: .6em;
+        padding-right: 1em;
+    }
+}
+
+p.notice {
+    color: #43AC6A;
+}
+
+p.alert {
+    color: #f04124;
+}
+
+
+h1, h2 {
+    font-family: $font-family-headings;
+    font-weight: bold;
+}
+
+a {
+    color: #c00000;
+}
+
+a:hover, a:focus {
+    color: darken(#c00000, 10%);
+}
+
+input[type="submit"] {
+    border: none;
+    background-color: #c00000;
+    color: #fff;
+    padding: 1em 2em;
+}
+
+input[type="submit"]:hover {
+    background-color: darken(#c00000, 10%);
+}
+
+a.red_btn {
+    background-color: #c00000;
+}
+
+a.red_btn:hover, a.red_btn:focus {
+    background-color: darken(#c00000, 10%);
+}
+
+
+.barbers_index {
+
+}
+
+.barberCards {
+    div {
+        position: relative;
+        background-color: #f4f4f4;
+        padding: 1em;
+        border-top: 5px solid #c00000;
+    }
+
+    a:hover {
+        div {
+            background-color: #fff;
+            border: 10px solid #c00000;
+        }
+    }
+
+    h3 {
+        font-family: $font-family-headings;
+    }
+
+    img {
+        width: 70%;
+
+    }
+
+    a.my_page_btn, a.show_btn {
+        background-color: #c00000;
+        position: absolute;
+        margin-bottom: 0;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    a.barber_only_link {
+        position: absolute;
+        right: 10px;
+
+        &.barber_edit_link {
+            top: 20px;
+        }
+        &.barber_destroy_link {
+            top: 40px;
+        }
+    }
+
+    p {
+        padding-top: 1em;
+        padding-right: 3em;
+    }
+}
+
+.form-container {
+    width: 50%;
+}
+
+.hero {
+    text-align: center;
+    padding: 150px 0;
+    background-image: url('/images/ToolsOfTrade-Banner.jpg');
+    position: relative;
+
+    .bg_layer {
+        background-color: rgba(000, 000, 000, 0.7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    h1 {
+        margin-top: 125px;
+        margin-bottom: 0;
+        color: #ffffff;
+        line-height: 35px;
+    }
+    h5 {
+        color: #fff;
+    }
+
+}
+
+.content {
+    padding: 2em 0;
+}
+
+.barber_show {
+    padding: 3em 0;
+
+    img {
+        display: block;
+    }
+    h5 {
+        margin-top: 5em;
+    }
+}
+
+/*
+*
+* Review Cards
+*
+*/
+
+.review_card {
+    width: 80%;
+    margin: 2em 0;
+    border-left: 4px solid #cc0000;
+    padding-left: 1em;
+    position: relative;
+
+    p {
+        margin-bottom: 0;
+    }
+    h6 {
+        text-align: left;
+    }
+    i {
+        color: #cc0000;
+    }
+
+    .delete_review_btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+/*
+*
+* Appointment Cards
+*
+*/
+li.appointment_card {
+    list-style: none;
+    border-left: 4px solid #cc0000;
+    margin: 2em 0;
+    padding-left: 2em;
+
+    span.time {
+        display: block;
+        color: darken(#cc0000, 10%);
+        font-weight: bold;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    a {
+        display: block;
+    }
+}
+/*
+*
+* Confirmation Page & Cards
+*
+*/
+.confirmation_page {
+    h3, h2 {
+        text-align: center;
+    }
+}
+
+.confirmation_card {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/*
+*
+* Forms
+*
+*/
+
+#appointment_appt_start_1i, #appointment_appt_start_2i, #appointment_appt_start_3i {
+    width: 31%;
+}
+
+#appointment_appt_start_4i, #appointment_appt_start_5i {
+    width: 48%;
+}
+
+@media screen and (max-width: 767px) {
+    li.current_user {
+        padding: .5em 0;
+        padding-left: 1em;
+    }
+    .form-container {
+        width: 100%;
+    }
+    .hero {
+        background-position: center;
+        background-size: cover;
+    }
+}

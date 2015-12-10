@@ -1,0 +1,27 @@
+<div class="row content confirmation_page">
+    <div class="large-12 columns">
+        <%= link_to '< Back to Barber', barber_path(@appointment.barber) %>
+        <h3>Your Appointment is Scheduled!</h3>
+        <h2><%= @appointment.appt_start.strftime('%a %b %d, %Y') %> at <span class="time"><%= @appointment.appt_start.strftime('%H:%M') %></span></h2>
+        <div class="confirmation_card">
+            <p>
+              Your Barber will be
+              <%= @appointment.barber.first_name %>
+              <%= @appointment.barber.last_name %>
+            </p>
+
+            <p>
+              We look forward to your appointment,
+              <%= @appointment.client_name %>
+            </p>
+
+            <p>
+              If we need to get a hold of you, we'll contact
+              <%= @appointment.client_phone %>
+            </p>
+
+            <%= link_to 'Edit Appointment Details', edit_appointment_path(@appointment), :class => 'button tiny' %>
+        </div>
+
+    </div>
+</div>

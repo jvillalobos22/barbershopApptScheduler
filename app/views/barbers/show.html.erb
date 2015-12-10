@@ -1,0 +1,78 @@
+<div class="row barber_show">
+    <div class="large-6 columns">
+        <%= link_to '< Back to Barbers', barbers_path %>
+        <% if current_user == @barber.user %>
+            <h2><%= @barber.first_name %> <%= @barber.last_name %></h2>
+            <%= link_to 'Edit My Account', edit_barber_path(@barber), :class => 'button tiny' %>
+        <% else %>
+            <h2><%= @barber.first_name %> <%= @barber.last_name %></h2>
+        <% end %>
+
+        <%= image_tag root_url + "/images/" + @barber.image_filename, alt: @barber.image_filename %>
+    </div>
+    <div class="large-6 columns">
+        <h5>About Your Barber:</h5>
+        <p class="show_bio">
+          <%= @barber.bio %>
+        </p>
+        <!-- Appointments -->
+        <%= link_to 'Book An Appointment', new_barber_appointment_path(@barber), :class => 'button red_btn' %>
+        <!-- Link to Appointment Index if barber is the user -->
+        <% if @owner %>
+            <%= link_to 'View My Appointments', barber_appointments_url(@barber), :class => 'button red_btn' %>
+        <% end %>
+        <!-- Show appointment create for all users -->
+
+
+        <!-- End Appointments -->
+
+    </div>
+</div>
+<div class="row">
+
+    <div class="large-8 large-centered columns">
+        <!-- Reviews Index and New -->
+        <h4>Reviews For <%= @barber.first_name %> <%= @barber.last_name %></h4>
+
+        <a href="#" data-reveal-id="myModal">Create A Review</a>
+
+        <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+          <h3>Create A Review:</h3>
+          <%= render 'reviews/form' %>
+
+          <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+        </div>
+
+
+
+
+
+
+        <% @barber.reviews.each do |review| %>
+            <% if !review.new_record? %>
+            <div class="review_card">
+                <div class="rating_stars">
+                    <% for i in 0..4 %>
+                        <% if (i < review.rating) %>
+                            <i class="fa fa-star"></i>
+                        <% else %>
+                            <i class="fa fa-star-o"></i>
+                        <% end %>
+                    <% end %>
+                </div>
+                <p>
+                  <%= review.str %>
+                </p>
+                <h6>- <%= review.client_name %></h6>
+                <% if current_user == @barber.user %>
+                <%= link_to 'Delete Review', review, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'delete_review_btn' %>
+                <% end %>
+            </div>
+            <% end %>
+        <% end %>
+        <!-- End Reviews -->
+
+
+
+    </div>
+</div>
