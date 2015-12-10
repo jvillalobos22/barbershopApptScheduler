@@ -1,5 +1,11 @@
-<h1>New Appointment</h1>
+<div class="row content">
+    <div class="large-8 medium-12 small-12 large-centered columns">
+        <%= link_to '< Back to Barber', barber_path(@appointment.barber) %>
 
-<%= render 'form' %>
+        <h1>New Appointment</h1>
 
-<%= link_to 'Back', barber_appointments_path %>
+        <%= render 'form' %>
+
+
+    </div>
+</div>

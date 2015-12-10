@@ -10,6 +10,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300|Lato:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -27,7 +29,11 @@
             <ul class="right devise_login">
                 <% if user_signed_in? %>
                 <li class="current_user">
-                    Signed in as <%= current_user.email %>
+                    <% if current_user.barber.nil? %>
+                    Unregistered Barber
+                    <% else %>
+                    Signed in as <%= current_user.barber.first_name %> <%= current_user.barber.last_name %>
+                    <% end %>
                 </li>
                 <li class="active"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
                 <% else %>

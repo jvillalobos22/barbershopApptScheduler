@@ -11,6 +11,11 @@
 <div class="row content">
     <div class="large-12 columns barbers_index">
         <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+            <% if user_signed_in? %>
+                <% if current_user.barber.nil? %>
+                    <%= link_to 'New Barber', new_barber_path %>
+                <% end %>
+            <% end %>
             <% @barbers.each do |barber| %>
                 <% if (user_signed_in? and barber.user == current_user) %>
                 <li class="barberCards currentBarber">
@@ -43,4 +48,8 @@
 </div>
 
 <!-- Need to only show if current_user does not have a barber -->
-<%= link_to 'New Barber', new_barber_path %>
+<% if user_signed_in? %>
+    <% if current_user.barber.nil? %>
+        <%= link_to 'New Barber', new_barber_path %>
+    <% end %>
+<% end %>

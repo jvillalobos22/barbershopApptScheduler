@@ -5,8 +5,11 @@ class AppointmentsController < ApplicationController
   # GET /appointments
   # GET /appointments.json
   def index
-    @appointments = Appointment.all
-    @barber = Barber.find params[:barber_id]
+      #@todaysAppointments = Appointment.where("appt_start BETWEEN ? AND ?", DateTime.now.beginning_of_day, DateTime.now.end_of_day)
+
+      @barber = Barber.find params[:barber_id]
+      @appointments = Appointment.where("barber_id = ?", @barber).all
+
   end
 
   # GET /appointments/1

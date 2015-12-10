@@ -25,7 +25,7 @@ class ReviewsController < ApplicationController
     if @review.save
         redirect_to barber_url(@barber) , notice: 'Review was successfully created.'
     else
-        render :new
+        redirect_to barber_url(@barber) , alert: 'Review was not created successfully.'
     end
   end
 
