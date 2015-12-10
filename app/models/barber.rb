@@ -6,4 +6,9 @@ class Barber < ActiveRecord::Base
   def generate_filename
       self.image_filename = ((0...10).map { (65 + rand(26)).chr }.join + ".jpg")
   end
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :user_id, presence: true
+  validates :bio, presence: true
 end

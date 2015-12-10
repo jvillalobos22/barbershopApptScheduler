@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Added Gems
 gem 'devise'
+gem 'foundation-rails'
 
 # For Developement
 gem 'quiet_assets', group: :development

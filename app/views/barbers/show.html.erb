@@ -2,12 +2,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= @barber.user %>
+  <%= @barber.user.id %>
 </p>
 
 <p>
-  <strong>Image filename:</strong>
-  <%= @barber.image_filename %>
+  <%= image_tag root_url + "/images/" + @barber.image_filename, size: "100x100", alt: @barber.image_filename %>
+</p>
 </p>
 
 <p>
