@@ -1,6 +1,8 @@
+<div class="row">
+
 <%= form_for([@barber, @review]) do |f| %>
   <% if @review.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="large-12 columns">
       <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
 
       <ul>
@@ -11,23 +13,23 @@
     </div>
   <% end %>
 
-  <!--<div class="field">
-    <%= f.label :barber_id %><br>
-    <%= f.text_field :barber_id %>
-</div>-->
-  <div class="field">
-    <%= f.label :client_name %><br>
-    <%= f.text_field :client_name %>
-  </div>
-  <div class="field">
-    <%= f.label :str %><br>
-    <%= f.text_field :str %>
-  </div>
-  <div class="field">
-    <%= f.label :rating %><br>
-    <%= f.number_field :rating, min: 1, max: 5 %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="review_form">
+      <div class="name_field large-6 medium-6 small-12 columns">
+        <%= f.label 'Your Name' %>
+        <%= f.text_field :client_name %>
+      </div>
+      <div class="rating_field large-6 medium-6 small-12 columns">
+        <%= f.label 'Rating on a sale of 1 to 5' %>
+        <%= f.number_field :rating, min: 1, max: 5 %>
+      </div>
+      <div class="review_field large-12 medium-12 small-12 columns">
+        <%= f.label 'Review' %>
+        <%= f.text_area :str %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
   </div>
 <% end %>
+
+</div>

@@ -70,3 +70,51 @@ barbers = Barber.create(
         }
     ]
 )
+
+reviews = Review.create(
+    [
+        {
+            barber_id: 1,
+            client_name: 'Kevin',
+            str: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            rating: 4
+        },
+        {
+            barber_id: 1,
+            client_name: 'Dalton',
+            str: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            rating: 5
+        },
+        {
+            barber_id: 1,
+            client_name: 'Joe',
+            str: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+            rating: 3
+        },
+        {
+            barber_id: 1,
+            client_name: 'Reed',
+            str: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            rating: 4
+        },
+        {
+            barber_id: 1,
+            client_name: 'Jose',
+            str: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+            rating: 2
+        },
+        {
+            barber_id: 1,
+            client_name: 'Cameron',
+            str: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
+            rating: 4
+        },
+        {
+            barber_id: 1,
+            client_name: 'Ewok',
+            str: 'This guy tried to blow up my planet!',
+            rating: 1
+        }
+
+    ]
+)

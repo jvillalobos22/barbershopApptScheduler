@@ -27,7 +27,11 @@
             <ul class="right devise_login">
                 <% if user_signed_in? %>
                 <li class="current_user">
-                    Signed in as <%= current_user.email %>
+                    <% if current_user.barber.nil? %>
+                    Unregistered Barber
+                    <% else %>
+                    Signed in as <%= current_user.barber.first_name %> <%= current_user.barber.last_name %>
+                    <% end %>
                 </li>
                 <li class="active"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
                 <% else %>

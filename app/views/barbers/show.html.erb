@@ -1,58 +1,75 @@
-<div class="row">
-    <div class="large-12 columns">
-        <!-- <p>
-          <strong>User:</strong>
-          <%= @barber.user.id %>
-        </p> -->
+<div class="row barber_show">
+    <div class="large-6 columns">
+        <%= link_to '< Back to Barbers', barbers_path %>
+        <% if current_user == @barber.user %>
+            <h2><%= @barber.first_name %> <%= @barber.last_name %></h2>
+            <%= link_to 'Edit My Account', edit_barber_path(@barber), :class => 'button tiny' %>
+        <% else %>
+            <h2><%= @barber.first_name %> <%= @barber.last_name %></h2>
+        <% end %>
 
-        <h2><%= @barber.first_name %> <%= @barber.last_name %></h2>
-        <p>
-          <%= image_tag root_url + "/images/" + @barber.image_filename, size: "100x100", alt: @barber.image_filename %>
-        </p>
-        </p>
-
-        <p>
-          <strong>Bio:</strong>
+        <%= image_tag root_url + "/images/" + @barber.image_filename, alt: @barber.image_filename %>
+    </div>
+    <div class="large-6 columns">
+        <h5>About Your Barber:</h5>
+        <p class="show_bio">
           <%= @barber.bio %>
         </p>
-
         <!-- Appointments -->
-        <%= link_to 'Create An Appointment', new_barber_appointment_path(@barber), :class => 'button tiny red_btn' %>
+        <%= link_to 'Book An Appointment', new_barber_appointment_path(@barber), :class => 'button red_btn' %>
         <!-- Link to Appointment Index if barber is the user -->
         <% if @owner %>
-            <h5><strong>You are the logged in barber</strong></h5>
-            <%= link_to 'Appointments', barber_appointments_url(@barber) %>
+            <%= link_to 'View My Appointments', barber_appointments_url(@barber), :class => 'button red_btn' %>
         <% end %>
         <!-- Show appointment create for all users -->
 
 
         <!-- End Appointments -->
+
+    </div>
+</div>
+<div class="row">
+
+    <div class="large-8 large-centered columns">
         <!-- Reviews Index and New -->
-        <h4>Reviews</h4>
-        <h6>Create A New Review:</h6>
-        <%= render 'reviews/form' %>
+        <h4>Reviews For <%= @barber.first_name %> <%= @barber.last_name %></h4>
+
+        <a href="#" data-reveal-id="myModal">Create A Review</a>
+
+        <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+          <h3>Create A Review:</h3>
+          <%= render 'reviews/form' %>
+
+          <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+        </div>
+
+
+
+
+
 
         <% @barber.reviews.each do |review| %>
             <% if !review.new_record? %>
+            <div class="review_card">
+                <div class="rating_stars">
+                    <% for i in 0..4 %>
+                        <% if (i < review.rating) %>
+                            <i class="fa fa-star"></i>
+                        <% else %>
+                            <i class="fa fa-star-o"></i>
+                        <% end %>
+                    <% end %>
+                </div>
                 <p>
-                  <strong>Client name:</strong>
-                  <%= review.client_name %>
-                </p>
-
-                <p>
-                  <strong>Str:</strong>
                   <%= review.str %>
                 </p>
-
-                <p>
-                  <strong>Rating:</strong>
-                  <%= review.rating %>
-                </p>
+                <h6>- <%= review.client_name %></h6>
+            </div>
             <% end %>
         <% end %>
         <!-- End Reviews -->
 
-        <%= link_to 'Edit', edit_barber_path(@barber) %> |
-        <%= link_to 'Back', barbers_path %>
+
+
     </div>
 </div>

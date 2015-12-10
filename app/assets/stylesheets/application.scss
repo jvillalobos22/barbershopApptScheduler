@@ -198,6 +198,50 @@ a.red_btn:hover, a.red_btn:focus {
     padding: 2em 0;
 }
 
+.barber_show {
+    padding: 3em 0;
+
+    h5 {
+        margin-top: 5em;
+    }
+}
+
+/*
+*
+* Review Cards
+*
+*/
+
+.review_card {
+    width: 80%;
+    margin: 2em 0;
+    border-left: 4px solid #cc0000;
+    padding-left: 1em;
+
+    p {
+        margin-bottom: 0;
+    }
+    h6 {
+        text-align: left;
+    }
+    i {
+        color: #cc0000;
+    }
+}
+
+/*
+*
+* Forms
+*
+*/
+
+#appointment_appt_start_1i, #appointment_appt_start_2i, #appointment_appt_start_3i {
+    width: 31%;
+}
+
+#appointment_appt_start_4i, #appointment_appt_start_5i {
+    width: 48%;
+}
 
 @media screen and (max-width: 767px) {
     .form-container {
