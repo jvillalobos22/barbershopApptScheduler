@@ -1,5 +1,13 @@
 source 'https://rubygems.org'
 
+# Added Gems
+gem 'devise'
+gem 'foundation-rails'
+
+# For Developement
+gem 'quiet_assets', group: :development
+gem 'better_errors', group: :development
+gem 'binding_of_caller', group: :developmentrai
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -44,4 +52,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

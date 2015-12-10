@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appt_start: 2015-12-08 16:30:05
+  barber_id: 
+  client_name: MyString
+  client_phone: MyString
+
+two:
+  appt_start: 2015-12-08 16:30:05
+  barber_id: 
+  client_name: MyString
+  client_phone: MyString

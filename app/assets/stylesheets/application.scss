@@ -1,0 +1,76 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+ */
+
+$font-family-headings: "Roboto Slab", Helvetica, Roboto, sans-serif;
+
+h1, h2 {
+    font-family: $font-family-headings;
+    font-weight: bold;
+}
+
+a {
+    color: #c00000;
+}
+
+a:hover, a:focus {
+    color: darken(#c00000, 10%)
+}
+
+.barberCards {
+    div {
+        position: relative;
+        background-color: #f4f4f4;
+        padding: 1em;
+        border-top: 5px solid #c00000;
+    }
+
+    a:hover {
+        div {
+            background-color: #fff;
+            border: 10px solid #c00000;
+        }
+    }
+
+    h3 {
+        font-family: $font-family-headings;
+    }
+
+    img {
+        width: 70%;
+
+    }
+
+    a.my_page_btn, a.show_btn {
+        background-color: #c00000;
+        position: absolute;
+        margin-bottom: 0;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    a.barber_only_link {
+        position: absolute;
+        right: 10px;
+
+        &.barber_edit_link {
+            top: 20px;
+        }
+        &.barber_destroy_link {
+            top: 40px;
+        }
+    }
+}
