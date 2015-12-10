@@ -28,45 +28,45 @@ barbers = Barber.create(
     [
         {
             user_id: 1,
-            image_filename: 'random.jpg',
+            image_filename: 'darthvaderbarber.jpg',
             bio: 'This is random text',
-            first_name: 'Juan',
-            last_name: 'Villalobos'
+            first_name: 'Darth',
+            last_name: 'Vader'
         },
         {
             user_id: 2,
-            image_filename: 'random.jpg',
+            image_filename: 'barber1.jpg',
             bio: 'This is random text',
             first_name: 'Javier',
-            last_name: 'Villalobos'
+            last_name: 'Rodriguez'
         },
         {
             user_id: 3,
-            image_filename: 'random.jpg',
+            image_filename: 'barber2.jpg',
             bio: 'This is random text',
             first_name: 'Vanessa',
             last_name: 'Villalobos'
         },
         {
             user_id: 4,
-            image_filename: 'random.jpg',
+            image_filename: 'barber3.jpg',
             bio: 'This is random text',
-            first_name: 'Bob',
-            last_name: 'TheBarber'
+            first_name: 'Anthony',
+            last_name: 'Smith'
         },
         {
             user_id: 5,
-            image_filename: 'random.jpg',
+            image_filename: 'barber4.jpg',
             bio: 'This is random text',
             first_name: 'Ron',
-            last_name: 'O Keefe',
+            last_name: 'Swanson',
         },
         {
             user_id: 6,
-            image_filename: 'random.jpg',
+            image_filename: 'odjbarber.jpg',
             bio: 'This is random text',
-            first_name: 'Billy',
-            last_name: 'TheKid'
+            first_name: 'Odell',
+            last_name: 'Beckham Jr'
         }
     ]
 )
