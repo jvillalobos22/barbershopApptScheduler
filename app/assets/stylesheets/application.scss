@@ -190,7 +190,7 @@ a.red_btn:hover, a.red_btn:focus {
 .hero {
     text-align: center;
     padding: 150px 0;
-    background-image: url('images/ToolsOfTrade-Banner.jpg');
+    background: asset_url('ToolsOfTrade-Banner.jpg');
     position: relative;
 
     .bg_layer {
