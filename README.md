@@ -10,3 +10,14 @@ class at California State University, Chico.
 * Devise Gem
   * For user authentication
 
+### Screenshots
+
+#### Homepage 
+![Screenshot of the homepage](/screenshots/barbershop_home.png)
+
+#### Barber Show Page
+![Screenshot of the barber showpage](/screenshots/barbershop_show.png)
+
+#### Barber Appointments Page [Responsive View]
+![Screenshot of the barber appointments page](/screenshots/appointment_show.png)
+
