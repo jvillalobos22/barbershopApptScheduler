@@ -1,5 +1,8 @@
-== README
+## Barbershop Appointment Scheduling Application
+This project was built as a final project for my Web Programming Fundamentals
+class at California State University, Chico.
 
+### Technologies
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
