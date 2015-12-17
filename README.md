@@ -3,29 +3,10 @@ This project was built as a final project for my Web Programming Fundamentals
 class at California State University, Chico.
 
 ### Technologies
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Rails version 4.2.4
+* Foundation Rails
+  * For responsive grid support and various framework features
+  * SCSS is used for all custom stylesheets
+* Devise Gem
+  * For user authentication
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
